@@ -4,7 +4,7 @@ export const site = {
   tagline: "Building Stronger Communities",
   description:
     "A 40+ year old, mission-driven nonprofit helping low to middle income people on the North Fork of Long Island find, keep and afford a place to call home.",
-  url: "https://nfha.org",
+  url: "https://northforkhousing.org",
   address: {
     street: "116 South Street",
     city: "Greenport",
@@ -13,7 +13,7 @@ export const site = {
   },
   phone: "(631) 477-1070",
   phoneHref: "tel:+16314771070",
-  email: "hello@nfha.org",
+  email: "hello@northforkhousing.org",
   social: [
     { label: "Facebook", href: "https://www.facebook.com/" },
     { label: "Instagram", href: "https://www.instagram.com/" },
