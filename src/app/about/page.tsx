@@ -50,7 +50,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-4 pt-14 sm:px-6 lg:px-8 lg:pt-20">
-        <p className="text-sm font-bold tracking-widest text-brand uppercase">
+        <p className="text-base font-bold tracking-wider text-brand uppercase">
           About us
         </p>
         <h1 className="mt-3 max-w-4xl text-4xl leading-[1.05] font-bold text-brand-night sm:text-6xl">
@@ -92,7 +92,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="bg-sun p-8 lg:p-10">
-            <h2 className="text-sm font-bold tracking-widest uppercase">Mission</h2>
+            <h2 className="text-base font-bold tracking-wider uppercase">Mission</h2>
             <p className="mt-3 font-display text-xl leading-snug font-semibold">
               Develop and maintain affordable housing for local families,
               provide support services for tenants in need, and partner with
@@ -101,14 +101,14 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="bg-sky p-8 lg:p-10">
-            <h2 className="text-sm font-bold tracking-widest uppercase">Purpose</h2>
+            <h2 className="text-base font-bold tracking-wider uppercase">Purpose</h2>
             <p className="mt-3 font-display text-xl leading-snug font-semibold">
               Provide safe, decent and affordable housing to low and moderate
               income individuals and families on the North Fork of Long Island.
             </p>
           </div>
           <div className="bg-lime p-8 lg:p-10">
-            <h2 className="text-sm font-bold tracking-widest uppercase">
+            <h2 className="text-base font-bold tracking-wider uppercase">
               Ethos &amp; values
             </h2>
             <p className="mt-3 font-display text-xl leading-snug font-semibold">
@@ -222,7 +222,7 @@ export default function AboutPage() {
           expertise to make the greatest housing and support services impact for
           all North Fork stakeholders.
         </p>
-        <h3 className="mt-12 text-sm font-bold tracking-widest text-ink-soft uppercase">
+        <h3 className="mt-12 text-base font-bold tracking-wider text-ink-soft uppercase">
           Board of directors
         </h3>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -238,7 +238,7 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <h3 id="advisors" className="mt-16 text-sm font-bold tracking-widest text-ink-soft uppercase">
+        <h3 id="advisors" className="mt-16 text-base font-bold tracking-wider text-ink-soft uppercase">
           Advisors
         </h3>
         <p className="mt-4 max-w-2xl text-ink-soft">

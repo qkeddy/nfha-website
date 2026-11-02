@@ -20,7 +20,13 @@ export function BlogIndex({
   const [featured, ...rest] = posts;
   return (
     <>
-      <PageHeader icon={Newspaper} title={title} accent="sun" eyebrow="News & Perspectives">
+      <PageHeader
+        icon={Newspaper}
+        title={title}
+        accent="sun"
+        // On category pages the title is the category, so name the section above it.
+        eyebrow={active ? "News & Perspectives" : undefined}
+      >
         <p>{intro}</p>
       </PageHeader>
 

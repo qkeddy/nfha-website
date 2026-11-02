@@ -38,7 +38,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-widest text-ink-soft uppercase">
+          <h2 className="text-base font-bold tracking-wider text-ink-soft uppercase">
             Visit &amp; contact
           </h2>
           <address className="mt-4 space-y-1 not-italic">
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-widest text-ink-soft uppercase">
+          <h2 className="text-base font-bold tracking-wider text-ink-soft uppercase">
             Explore
           </h2>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
