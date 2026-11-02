@@ -38,7 +38,7 @@ export function Logo({
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-3 ${className}`}
+      className={`group inline-flex shrink-0 items-center gap-3 whitespace-nowrap ${className}`}
       aria-label="North Fork Housing Alliance, home"
     >
       <LogoMark className={`h-11 w-11 shrink-0 ${mark}`} />

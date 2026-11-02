@@ -12,7 +12,7 @@ export function Newsletter() {
       <Waves className="absolute inset-x-0 -bottom-2 h-24 w-full text-sky/40" />
       <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[1fr_1.3fr] md:items-center lg:px-8">
         <div>
-          <p className="mb-2 flex items-center gap-2 text-sm font-bold tracking-widest text-brand-night uppercase">
+          <p className="mb-2 flex items-center gap-2 text-base font-bold tracking-wider text-brand-night uppercase">
             <Mail className="h-4 w-4" aria-hidden="true" /> Stay informed
           </p>
           <h2 className="text-3xl font-bold text-brand-night sm:text-4xl">

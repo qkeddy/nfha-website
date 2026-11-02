@@ -161,7 +161,7 @@ export default function HomePage() {
       {/* Communities run on people */}
       <section className="relative overflow-hidden bg-brand-night text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <p className="text-sm font-bold tracking-widest text-sun uppercase">
+          <p className="text-base font-bold tracking-wider text-sun uppercase">
             The missing middle
           </p>
           <h2 className="mt-3 max-w-4xl text-3xl leading-tight font-bold sm:text-5xl">
@@ -269,13 +269,13 @@ export default function HomePage() {
       {/* Partners */}
       <section className="border-t border-sand-deep bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-center text-sm font-bold tracking-widest text-ink-soft uppercase">
+          <h2 className="text-center text-base font-bold tracking-wider text-ink-soft uppercase">
             Strategic partners
           </h2>
           <div className="mt-8">
             <PartnerLogos />
           </div>
-          <h2 className="mt-14 text-center text-sm font-bold tracking-widest text-ink-soft uppercase">
+          <h2 className="mt-14 text-center text-base font-bold tracking-wider text-ink-soft uppercase">
             Sponsors
           </h2>
           <p className="mt-4 text-center text-ink-soft">

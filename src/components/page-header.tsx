@@ -53,7 +53,7 @@ export function PageHeader({
             className={`flex flex-col justify-center p-8 sm:p-12 ${accents[accent]}`}
           >
             {eyebrow && (
-              <p className="mb-3 text-sm font-bold tracking-widest uppercase opacity-80">
+              <p className="mb-3 text-base font-bold tracking-wider uppercase opacity-80">
                 {eyebrow}
               </p>
             )}

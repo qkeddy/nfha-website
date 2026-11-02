@@ -38,7 +38,7 @@ export default function FundPage() {
       <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
         <div className="grid gap-2 overflow-hidden rounded-3xl md:grid-cols-3 md:grid-rows-2">
           <div className="flex flex-col justify-end bg-brand p-8 sm:p-12 md:col-span-2">
-            <p className="text-sm font-bold tracking-widest text-sun uppercase">
+            <p className="text-lg font-bold tracking-wider text-sun uppercase sm:text-xl">
               Powered by the North Fork Housing Alliance
             </p>
             <h1 className="mt-4 font-display text-6xl leading-[0.9] font-bold sm:text-8xl">
@@ -187,7 +187,7 @@ export default function FundPage() {
       <section id="help" className="bg-brand-night text-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="text-sm font-bold tracking-widest text-sun uppercase">Funding sources</p>
+            <p className="text-base font-bold tracking-wider text-sun uppercase">Funding sources</p>
             <h2 className="mt-3 text-4xl font-bold">Capitalized by community</h2>
             <p className="mt-4 text-lg text-white/75">
               The Fund will be capitalized through fundraising drawing upon both
