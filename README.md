@@ -1,4 +1,4 @@
-# North Fork Housing Alliance — nfha.org
+# North Fork Housing Alliance — NorthForkHousing.org
 
 Website for the North Fork Housing Alliance (Greenport, NY), built with Next.js 16 (App Router), Tailwind CSS v4, and deployed on Vercel.
 
