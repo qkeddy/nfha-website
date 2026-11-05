@@ -76,7 +76,7 @@ Commit and push to `main`; Vercel rebuilds and publishes automatically. The URL 
 - **"Since 1988" vs "40+ years"** both come from the PDF but don't agree (38 years). They appear together in the home-page stats row.
 - **Social accounts:** the PDF lists Facebook, Instagram, TikTok and LinkedIn, but gives no URLs; the footer icons link to the generic home pages. Quin isn't sure about keeping TikTok. Edit `site.social` in `src/lib/site.ts`.
 - **Higher-resolution photos:** the images in `public/images/` were extracted from the PDF at roughly 460–950px wide. Brent said he'd send cropped JPGs and a Word doc of the copy.
-- **Placeholder copy:** "Advisor profiles are coming soon" (About), "Call ahead to confirm office hours" (Contact), "Presentations and downloadable guides will be posted here" (Resources). Sponsors, more staff and advisor bios are still to come. The Services page copy was written from the About page because the PDF only had lorem ipsum there.
+- **Placeholder copy:** "Call ahead to confirm office hours" (Contact), "Presentations and downloadable guides will be posted here" (Resources). Sponsors are still to come. (Staff, Fund leadership and advisor bios were added from the 11-4-26 update.) The Services page copy was written from the About page because the PDF only had lorem ipsum there.
 - **Sample blog posts:** the five posts in `content/blog/` were written from the PDF's content; replace or edit them.
 - **Unverified resource links:** 211 Long Island, NY State of Health and NY HEAP didn't respond to automated checks (they probably block bots); click them to confirm.
 - **Deadline:** Tanya Palmore presents at CAST ("Housing Crisis: Proven Solutions") on Nov 9; the homepage may serve as a landing page for it.

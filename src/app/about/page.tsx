@@ -37,6 +37,114 @@ const properties = [
   },
 ];
 
+type Person = {
+  name: string;
+  role: string;
+  org?: string;
+  bio: React.ReactNode[];
+};
+
+function ExtLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-brand underline-offset-2 hover:underline"
+    >
+      {children}
+    </a>
+  );
+}
+
+const staff: Person[] = [
+  {
+    name: "Tanya Palmore",
+    role: "Executive Director",
+    bio: [
+      "Tanya has been the Executive Director of the North Fork Housing Alliance since 1996, responsible for the overall operation. She is a HUD Certified Housing Counselor, holds a Master of Science Degree in Tax Accounting and a Bachelor of Science Degree in Accounting, and currently serves on the Town of Southold Community Housing Advisory Board. She is a Board Member and Vice-President of Riverhead Housing Development Corporation, and the Board Chairperson of the Supervisory Committee for Suffolk Credit Union.",
+      "Throughout her tenure she has developed a longstanding commitment to community service, housing advocacy, and improving the quality of life for those in need. Her years of experience reflect a deep understanding of the importance of housing stability and its impact on individuals, families, and the broader community – believing that safe and affordable housing is more than a basic necessity – it is the foundation for dignity, independence, and opportunity.",
+    ],
+  },
+  {
+    name: "Marilyn Sierra",
+    role: "Housing Program Manager",
+    bio: [
+      "Marilyn is a HUD Certified Housing Counselor, responsible for Client Services and Housing Assistance, overseeing inquiries from housing program applicants, tenants, landlords, and community members.",
+      "She represents the agency and participates in community meetings, collaborates on housing-related initiatives, and assists clients in navigating housing resources, benefits, and community-based services and supports outreach efforts that increase awareness of available housing programs. Marilyn also provides general and specific housing counseling and crisis intervention for homeowners including coordinating the rehabilitation program.",
+    ],
+  },
+  {
+    name: "Sylvia Smith",
+    role: "Section 8 Program Manager",
+    bio: [
+      "Sylvia is the Section 8 Housing Choice Voucher Program Manager, responsible for the overall administration, management, and oversight of the Housing Choice Voucher Program – providing guidance and supervision to program staff while working closely with the Executive Director, HUD, landlords, participants, and community partners to promote effective program administration and housing stability.",
+      "She monitors program operations to ensure consistency, accuracy, accountability, and timely processing of program activities, and reviews HUD notices, regulatory updates, and program guidance and implements changes as necessary.",
+    ],
+  },
+];
+
+const fundLeaders: Person[] = [
+  {
+    name: "Katy Stokes",
+    role: "Workforce Housing Fund Development Coordinator",
+    bio: [
+      "Katy is a Community Leader & Housing Advocate, Southold Peconic Civic Association Director, contributing journalist to the East End Beacon, Suffolk Times, Riverhead News Review, North Fork Sun and other media outlets, and Lawyer. She is a dynamic, proactive Southold resident engaged in all aspects of community – thoughtful and sensitive to the needs of stakeholders across the spectrum. She actively contributes to Southold Town government – providing insights and a caring point of view to help everyone in the community thrive.",
+    ],
+  },
+  {
+    name: "Patricia Kirkpatrick",
+    role: "Workforce Housing Fund Development Coordinator",
+    bio: [
+      "Pat is a multi-faceted Community & Housing Advocate who brings deep and broad experience to solving our affordable housing crisis – with previous 30 years experience as a General Contractor in Fairfield County, CT and Westchester, NY, focused on remodeling houses for resale while maintaining affordability, as well as 5 years working in Affordable Housing in Greenwich, CT and 3 years and counting, currently working on zoning issues in Southold Town with ZUAC. She brings a unique, holistic perspective to do what makes sense for all stakeholders that will benefit the community.",
+    ],
+  },
+];
+
+const advisors: Person[] = [
+  {
+    name: "Michael Daly",
+    role: "Senior Advisor & Housing Advocate",
+    org: "True North Realty Associates",
+    bio: [
+      "Michael Daly is Senior Advisor at True North Realty Associates, focused on human infrastructure on the East End through his consulting, community engagement and delivery services.",
+      "True North connects knowledge, people, organizations, institutions, businesses and resources to facilitate integrated housing and community-development solutions.",
+      <>
+        Michael played a role in the campaign to pass the Peconic Bay Region
+        Community Housing Fund Public Referendum in 2022, estimated to raise
+        over $650M for Community Housing Initiatives on the East End of Long
+        Island, NY.{" "}
+        <ExtLink href="https://www.truenorth.associates">www.truenorth.associates</ExtLink>
+      </>,
+    ],
+  },
+  {
+    name: "Brent Robertson",
+    role: "Founder & President",
+    org: "Brand Robertson / North Fork Authentic",
+    bio: [
+      <>
+        Brent Robertson, principal of Brand Robertson – a New York and
+        Greenport-based multidisciplinary consultancy, is a brand development
+        and marketing communications expert and entrepreneur with 30+ years
+        experience building, transforming and growing purpose-driven brands and
+        organizations to thrive.{" "}
+        <ExtLink href="https://www.brandrobertson.com">www.brandrobertson.com</ExtLink>
+      </>,
+      <>
+        Identifying the need, Brent conceived, advocated for and was awarded a
+        New York State EDC grant in 2017 to build and grow North Fork Authentic,
+        the regional umbrella brand of the North Fork of Long Island. NFA
+        empowers the community to thrive through connection, collaboration,
+        innovation, education and promotion – focused on economic
+        sustainability for the region.{" "}
+        <ExtLink href="https://www.northforkauthentic.com">www.northforkauthentic.com</ExtLink>
+      </>,
+      "Brent is an active 10 year member of the Southold EDC, is on the Board of the North Fork Promotional Council, and collaborates with other regional community organizations and housing initiatives.",
+    ],
+  },
+];
+
 function initials(name: string) {
   return name
     .split(/\s+/)
@@ -44,6 +152,41 @@ function initials(name: string) {
     .slice(0, 2)
     .map((w) => w[0])
     .join("");
+}
+
+function PersonCard({
+  person,
+  tile = "bg-brand text-white",
+  className = "",
+}: {
+  person: Person;
+  tile?: string;
+  className?: string;
+}) {
+  return (
+    <article className={`rounded-3xl bg-white p-8 sm:p-10 ${className}`}>
+      <div className="flex items-center gap-5">
+        <div
+          className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl font-display text-2xl font-bold ${tile}`}
+          aria-hidden="true"
+        >
+          {initials(person.name)}
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold text-brand-night">{person.name}</h3>
+          <p className="font-semibold text-brand">{person.role}</p>
+          {person.org ? (
+            <p className="text-sm font-semibold text-ink-soft">{person.org}</p>
+          ) : null}
+        </div>
+      </div>
+      <div className="mt-6 space-y-4 leading-relaxed text-ink-soft">
+        {person.bio.map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
+      </div>
+    </article>
+  );
 }
 
 export default function AboutPage() {
@@ -71,7 +214,7 @@ export default function AboutPage() {
       <section className="mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-2 overflow-hidden rounded-3xl md:grid-cols-3">
           <div className="flex aspect-[4/3] items-center justify-center bg-brand md:aspect-auto">
-            <LogoMark className="h-28 w-28 text-white" />
+            <LogoMark className="h-42 w-42 text-white" />
           </div>
           <div className="relative aspect-[4/3]">
             <Image
@@ -139,7 +282,7 @@ export default function AboutPage() {
         </div>
         <div className="grid overflow-hidden rounded-3xl sm:grid-cols-2">
           <div className="flex min-h-56 items-center justify-center bg-brand p-10">
-            <HeartHandshake className="h-24 w-24 text-white" strokeWidth={1.5} aria-hidden="true" />
+            <HeartHandshake className="h-36 w-36 text-white" strokeWidth={1.5} aria-hidden="true" />
           </div>
           <blockquote className="flex items-center bg-sun p-8">
             <p className="font-display text-xl leading-snug font-bold text-ink sm:text-2xl">
@@ -160,28 +303,7 @@ export default function AboutPage() {
             skills.
           </SectionHeading>
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-            <article className="rounded-3xl bg-white p-8 sm:p-10">
-              <div className="flex items-center gap-5">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-brand font-display text-2xl font-bold text-white">
-                  TP
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-night">Tanya Palmore</h3>
-                  <p className="font-semibold text-brand">Executive Director</p>
-                </div>
-              </div>
-              <p className="mt-6 leading-relaxed text-ink-soft">
-                Executive Director since 1996, responsible for the overall
-                operation of the North Fork Housing Alliance. She is a HUD
-                Certified Housing Counselor, holds a Master of Science Degree in
-                Tax Accounting and a Bachelor of Science Degree in Accounting,
-                and currently serves on the Town of Southold Community Housing
-                Advisory Board. She is a Board Member and Vice-President of
-                Riverhead Housing Development Corporation, and the Board
-                Chairperson of the Supervisory Committee for Suffolk Credit
-                Union.
-              </p>
-            </article>
+            <PersonCard person={staff[0]} />
             <aside className="flex flex-col justify-between rounded-3xl bg-brand-night p-8 text-white sm:p-10">
               <div>
                 <Mail className="h-8 w-8 text-sun" aria-hidden="true" />
@@ -201,6 +323,27 @@ export default function AboutPage() {
               </div>
             </aside>
           </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {staff.slice(1).map((p) => (
+              <PersonCard key={p.name} person={p} />
+            ))}
+          </div>
+
+          <div id="fund-leadership" className="mt-20 scroll-mt-28">
+            <SectionHeading eyebrow="Workforce Housing Fund" title="Expert leadership">
+              The Fund is managed by Katy Stokes and Patricia Kirkpatrick who,
+              as Workforce Housing Fund Development Coordinators have the
+              authority to represent the NFHA in soliciting funds and
+              negotiating the purchase of real property as well as dealing with
+              government officials. They report directly to the North Fork
+              Housing Alliance Executive Director.
+            </SectionHeading>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {fundLeaders.map((p) => (
+                <PersonCard key={p.name} person={p} tile="bg-sky text-white" />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -208,7 +351,7 @@ export default function AboutPage() {
       <section id="board" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid overflow-hidden rounded-3xl sm:grid-cols-[2fr_3fr]">
           <div className="flex min-h-48 items-center justify-center bg-brand p-10">
-            <Compass className="h-24 w-24 text-white" strokeWidth={1.5} aria-hidden="true" />
+            <Compass className="h-36 w-36 text-white" strokeWidth={1.5} aria-hidden="true" />
           </div>
           <div className="flex items-center bg-sky p-8 sm:p-12">
             <h2 className="text-4xl leading-[1.05] font-bold text-white sm:text-5xl">
@@ -238,13 +381,23 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <h3 id="advisors" className="mt-16 text-base font-bold tracking-wider text-ink-soft uppercase">
-          Advisors
-        </h3>
-        <p className="mt-4 max-w-2xl text-ink-soft">
-          Our advisors bring expertise in real estate, finance, planning and
-          community development. Advisor profiles are coming soon.
-        </p>
+        <div id="advisors" className="mt-20 scroll-mt-28">
+          <SectionHeading eyebrow="Advisors & support" title="Expertise behind the work">
+            Our Advisors bring years of expertise in real estate, finance,
+            planning, community and economic development and communications –
+            providing insights, understanding, know-how and support services.
+          </SectionHeading>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {advisors.map((p) => (
+              <PersonCard
+                key={p.name}
+                person={p}
+                tile="bg-mist text-brand"
+                className="ring-1 ring-sand-deep"
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Managed properties */}

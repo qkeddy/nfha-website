@@ -44,7 +44,7 @@ export function PageHeader({
               aria-hidden="true"
             />
             <Icon
-              className="relative h-20 w-20 text-white sm:h-28 sm:w-28"
+              className="relative h-30 w-30 text-white sm:h-42 sm:w-42"
               strokeWidth={1.75}
               aria-hidden="true"
             />

@@ -159,10 +159,11 @@ export default function FundPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
           <SectionHeading eyebrow="Intended outcomes" title="More homes. Stronger roots.">
-            Through the acquisition of homes and the construction of ADUs, the
-            Fund aims to increase the local supply of attainable rental housing,
-            retain workers that support the local community, make productive and
-            efficient use of residential property, and provide stable, quality
+            Through the acquisition of homes, property and the construction of
+            ADUs, single and multi-family homes the Fund aims to increase the
+            local supply of attainable rental housing, retain workers that
+            support the local community, make productive and efficient use of
+            residential property, and provide stable, energy-efficient quality
             housing to middle-income families and individuals who are being
             priced out of the area.
           </SectionHeading>
