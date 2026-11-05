@@ -177,7 +177,7 @@ export default function HomePage() {
                 {role}
               </li>
             ))}
-            <li className="rounded-full bg-sun px-4 py-2 text-sm font-bold text-ink sm:text-base">
+            <li className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 sm:text-base">
               even our elected officials
             </li>
           </ul>

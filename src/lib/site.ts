@@ -56,8 +56,8 @@ export const partners = [
   {
     name: "True North Realty Associates",
     src: "/images/partners/true-north.jpg",
-    width: 234,
-    height: 234,
+    width: 600,
+    height: 670,
   },
 ];
 
