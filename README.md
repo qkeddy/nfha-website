@@ -58,9 +58,18 @@ Commit and push to `main`; Vercel rebuilds and publishes automatically. The URL 
 - **Preview URLs are behind Vercel login.** Copy the link from Vercel's comment on the PR rather than guessing it: Vercel shortens addresses over 63 characters (e.g. `…-git-fix-typography-and-b3e621-…`).
 - **Vercel CLI caveat:** the CLI on Quin's machine is logged into the Nexadata team, not `quin-eddys-projects`. Deploy through Git, or run `vercel login` with the NFHA account before any `vercel` CLI work.
 
-## Project status (as of 2026-11-03)
+## Project status (as of 2026-11-04)
 
 **Done:** all sitemap pages built from Brent Robertson's PDF (`NFHA Website Development_1.0.pdf`), blog with categories, domain references switched to `northforkhousing.org`, mobile and laptop menu fixes, larger section labels.
+
+**Done 2026-11-04** (Brent's `NFHA Website Updates_11-4-26` package, PR #3): new NFHA logotype in header (4c) and footer (grays) as vector SVG plus new favicon, revised staff bios, Workforce Housing Fund expert leadership (Katy Stokes, Patricia Kirkpatrick), Advisors & Support (Michael Daly, Brent Robertson), revised Fund copy, "Building Community Thoughtfully" renderings on Work With Us (`public/images/renderings/`), white icons on blue panels enlarged 50%, hamlet list removed from footer. Live on production.
+
+### Before public launch
+
+1. **Register NorthForkHousing.org and set up email.** As of 2026-11-04 the domain is still unregistered (no DNS or MX), so every `hello@northforkhousing.org` link and the `mailto:` contact/newsletter forms go nowhere. The phone number is the only working contact method until this is done. The sitemap and social-share links also point at this domain.
+2. **Real social links** for Facebook, Instagram, TikTok and LinkedIn (see below).
+3. **Higher-resolution photos** for everything except the renderings (see below).
+4. **Online giving** can follow launch; the Donate page shows a "being set up" message until Stripe is connected (see Next up).
 
 **Domain:** `nfha.org` is taken (Niagara Falls Housing Authority), so the site uses the alternate, **NorthForkHousing.org**. It isn't registered yet; it can be bought through Vercel or Google. When it's registered, add it under Vercel → Project → Settings → Domains. Email (`hello@`, `tanya@`, etc.) will come from Google Workspace.
 
@@ -75,8 +84,8 @@ Commit and push to `main`; Vercel rebuilds and publishes automatically. The URL 
 
 - **"Since 1988" vs "40+ years"** both come from the PDF but don't agree (38 years). They appear together in the home-page stats row.
 - **Social accounts:** the PDF lists Facebook, Instagram, TikTok and LinkedIn, but gives no URLs; the footer icons link to the generic home pages. Quin isn't sure about keeping TikTok. Edit `site.social` in `src/lib/site.ts`.
-- **Higher-resolution photos:** the images in `public/images/` were extracted from the PDF at roughly 460–950px wide. Brent said he'd send cropped JPGs and a Word doc of the copy.
-- **Placeholder copy:** "Call ahead to confirm office hours" (Contact), "Presentations and downloadable guides will be posted here" (Resources). Sponsors are still to come. (Staff, Fund leadership and advisor bios were added from the 11-4-26 update.) The Services page copy was written from the About page because the PDF only had lorem ipsum there.
+- **Higher-resolution photos:** apart from `public/images/renderings/` (supplied 11-4-26), the images in `public/images/` were extracted from the PDF at roughly 460–950px wide. Brent said he'd send cropped JPGs.
+- **Placeholder copy:** "Call ahead to confirm office hours" (Contact) and "Presentations and downloadable guides will be posted here" (Resources) are approved to stay for launch. Sponsors are still to come. (Staff, Fund leadership and advisor bios were added from the 11-4-26 update.) The Services page copy was written from the About page because the PDF only had lorem ipsum there.
 - **Sample blog posts:** the five posts in `content/blog/` were written from the PDF's content; replace or edit them.
 - **Unverified resource links:** 211 Long Island, NY State of Health and NY HEAP didn't respond to automated checks (they probably block bots); click them to confirm.
 - **Deadline:** Tanya Palmore presents at CAST ("Housing Crisis: Proven Solutions") on Nov 9; the homepage may serve as a landing page for it.
