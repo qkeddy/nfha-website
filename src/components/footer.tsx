@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "./logo";
+import { LogoType } from "./logo";
 import { mainNav, site } from "@/lib/site";
 import { SocialIcon } from "./social-icon";
 
@@ -8,14 +8,9 @@ export function Footer() {
     <footer className="bg-sand text-ink">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
         <div>
-          <div className="flex items-center gap-4">
-            <LogoMark className="h-14 w-14 text-ink" />
-            <p className="font-display text-lg leading-[1.05] font-bold">
-              <span className="block text-ink-soft">North Fork</span>
-              <span className="block">Housing</span>
-              <span className="block text-ink-soft">Alliance</span>
-            </p>
-          </div>
+          <Link href="/" aria-label="North Fork Housing Alliance, home">
+            <LogoType tone="gray" className="h-14 w-auto" />
+          </Link>
           <p className="mt-5 max-w-sm text-ink-soft">
             Since 1988, a steady and trusted presence on the North Fork. We are
             Building Stronger Communities.
@@ -76,11 +71,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-sand-deep">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-ink-soft sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl px-4 py-6 text-sm text-ink-soft sm:px-6 lg:px-8">
           <p>
             © <CopyrightYear /> {site.name}. A nonprofit organization.
           </p>
-          <p>Greenport · Southold · Mattituck · Riverhead · Orient</p>
         </div>
       </div>
     </footer>

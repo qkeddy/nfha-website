@@ -11,6 +11,29 @@ export const metadata: Metadata = {
     "We collaborate with organizations, municipalities, developers, builders, contractors and property owners to close the housing gap on the North Fork.",
 };
 
+const renderings = [
+  {
+    src: "/images/renderings/cottage-court.jpg",
+    alt: "Rendering of a cottage court of white homes with front porches around a shared garden path",
+  },
+  {
+    src: "/images/renderings/adu-cottage.jpg",
+    alt: "Rendering of a small white accessory dwelling unit with a front stoop",
+  },
+  {
+    src: "/images/renderings/adu-interior.jpg",
+    alt: "Rendering of an open-plan apartment interior with living area, kitchen and bedroom",
+  },
+  {
+    src: "/images/renderings/multifamily-home.jpg",
+    alt: "Rendering of a white colonial-style multifamily house with black shutters",
+  },
+  {
+    src: "/images/renderings/neighborhood-street.jpg",
+    alt: "Rendering of a curving street lined with white multifamily homes",
+  },
+];
+
 const audiences = [
   {
     id: "organizations",
@@ -85,6 +108,44 @@ export default function WorkWithUsPage() {
             </article>
           ))}
         </div>
+
+        <figure className="mt-20">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl leading-tight font-bold text-brand-night sm:text-4xl">
+              Building Community Thoughtfully
+            </h2>
+            <p className="mt-3 text-lg leading-relaxed text-ink-soft">
+              Examples of Community Housing solutions that will work to tackle
+              our most important challenge.
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div className="relative col-span-2 aspect-[3/2] overflow-hidden rounded-2xl lg:row-span-2 lg:aspect-auto">
+              <Image
+                src={renderings[0].src}
+                alt={renderings[0].alt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            {renderings.slice(1).map((r) => (
+              <div key={r.src} className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+                <Image
+                  src={r.src}
+                  alt={r.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <figcaption className="mt-4 text-sm text-ink-soft">
+            Renderings courtesy True North Realty Associates.
+          </figcaption>
+        </figure>
+
         <div className="mt-14 rounded-3xl bg-sand p-8 text-center sm:p-12">
           <h2 className="text-3xl font-bold text-brand-night">Have an idea? Let&apos;s talk.</h2>
           <p className="mt-3 text-lg text-ink-soft">
