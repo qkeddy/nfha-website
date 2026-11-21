@@ -87,7 +87,7 @@ export default function ServicesPage() {
 
       <section className="grid md:grid-cols-3">
         <div className="relative aspect-[4/3]">
-          <Image src="/images/places/neighborhood.jpg" alt="A family walking to their home" fill sizes="33vw" className="object-cover" />
+          <Image src="/images/places/renovation.jpg" alt="A home under renovation" fill sizes="33vw" className="object-cover" />
         </div>
         <div className="flex items-center bg-marigold p-10">
           <p className="font-display text-3xl leading-tight font-bold text-ink">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
           </p>
         </div>
         <div className="relative aspect-[4/3]">
-          <Image src="/images/places/renovation.jpg" alt="A home under renovation" fill sizes="33vw" className="object-cover" />
+          <Image src="/images/places/neighborhood.jpg" alt="A family walking to their home" fill sizes="33vw" className="object-cover" />
         </div>
       </section>
 

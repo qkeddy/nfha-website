@@ -25,7 +25,7 @@ const board = [
 const properties = [
   {
     name: "The Cottages at Mattituck",
-    body: "Permanently affordable, income-restricted homeownership with resale caps that keep homes attainable for future moderate-income buyers.",
+    body: "22 home income-restricted and permanently affordable community. Homes are owned, not rented, 1,100 sq. ft. with 2 bedrooms and 1 bath. Located off Old Sound Avenue, walkable to the Mattituck shopping center, movie theater, restaurants, and Love Lane.",
   },
   {
     name: "Senior housing",
@@ -33,8 +33,17 @@ const properties = [
   },
   {
     name: "Affordable rentals",
-    body: "Rental housing operated and maintained by NFHA for low income North Fork residents.",
+    body: "Lakeside Garden Apartments, and others, are affordable, income-restricted rental housing communities walkable to all shopping and services.",
   },
+];
+
+const propertyPhotos = [
+  { src: "/images/properties/cottages-sign.jpg", alt: "The Cottages at Mattituck entrance sign" },
+  { src: "/images/properties/cottages-patio.jpg", alt: "A shingled cottage with Adirondack chairs on a stone patio" },
+  { src: "/images/properties/bathroom.jpg", alt: "A clean, updated apartment bathroom" },
+  { src: "/images/properties/lakeside-garden.jpg", alt: "Lakeside Garden Apartments sign in front of the building" },
+  { src: "/images/properties/bedroom.jpg", alt: "A sunny, empty apartment bedroom" },
+  { src: "/images/properties/kitchen.jpg", alt: "An apartment kitchen with wood cabinets" },
 ];
 
 type Person = {
@@ -89,7 +98,7 @@ const fundLeaders: Person[] = [
     name: "Katy Stokes",
     role: "Workforce Housing Fund Development Coordinator",
     bio: [
-      "Katy is a Community Leader & Housing Advocate, Southold Peconic Civic Association Director, contributing journalist to the East End Beacon, Suffolk Times, Riverhead News Review, North Fork Sun and other media outlets, and Lawyer. She is a dynamic, proactive Southold resident engaged in all aspects of community – thoughtful and sensitive to the needs of stakeholders across the spectrum. She actively contributes to Southold Town government – providing insights and a caring point of view to help everyone in the community thrive.",
+      "Katy is an Affordable Housing Advocate and a retired lawyer. She is the Chairperson of the Housing Working Group of the North Fork Civics Association; a Board member of the Southold Peconic Civic Association; a Board member and chairperson of the Audit Committee of BRC, which provides housing and treatment services to thousands of homeless New Yorkers annually; a member of Community Board 4 in Manhattan and co-chair of its Chelsea Land Use committee; and the author of the monthly Neighborhood News column covering Southold and Peconic in the Suffolk Times.",
     ],
   },
   {
@@ -403,7 +412,13 @@ export default function AboutPage() {
       {/* Managed properties */}
       <section id="properties" className="bg-mist">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Managed properties" title="Homes we build, preserve and care for" />
+          <SectionHeading eyebrow="Managed properties" title="Homes we build, preserve and care for">
+            The North Fork Housing Alliance manages over 50 properties across
+            the North Fork, ranging from single and multi-family homes to small
+            apartment buildings, providing clean, well-maintained, affordable
+            housing for a spectrum of residents – from seniors to low and
+            middle income families.
+          </SectionHeading>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {properties.map((p, i) => (
               <div key={p.name} className="rounded-3xl bg-white p-8">
@@ -414,6 +429,13 @@ export default function AboutPage() {
                 )}
                 <h3 className="mt-5 text-xl font-bold text-brand-night">{p.name}</h3>
                 <p className="mt-2 text-ink-soft">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {propertyPhotos.map((p) => (
+              <div key={p.src} className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+                <Image src={p.src} alt={p.alt} fill sizes="(min-width: 768px) 33vw, 50vw" className="object-cover" />
               </div>
             ))}
           </div>

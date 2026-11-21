@@ -2,13 +2,33 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Building, Heart, Home, KeyRound, Landmark, Users } from "lucide-react";
 import { ButtonLink } from "@/components/button";
-import { PeopleStrip, SectionHeading } from "@/components/sections";
+import { PeopleStrip, SectionHeading, fundStrip } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "The Workforce Housing Fund",
   description:
     "A dedicated fund of the North Fork Housing Alliance for the preservation and development of housing for households earning 80% to 120% of Area Median Income.",
 };
+
+const heroPhotos = [
+  { src: "/images/fund/server.jpg", alt: "A smiling restaurant server holding a tablet" },
+  { src: "/images/fund/teacher.jpg", alt: "A teacher helping a student with schoolwork" },
+  { src: "/images/fund/firefighter.jpg", alt: "A firefighter in a red helmet, seen from behind" },
+  { src: "/images/fund/parent-child.jpg", alt: "A father lifting his toddler in a grocery aisle" },
+];
+
+const workPhotos = [
+  { src: "/images/fund/work-truck.jpg", alt: "A contractor’s work truck with ladders parked outside a house" },
+  { src: "/images/fund/renovation.jpg", alt: "A two-story house under renovation with work tables out front" },
+  { src: "/images/fund/electrician.jpg", alt: "An electrician in a hard hat wiring a panel" },
+];
+
+const renderings = [
+  { src: "/images/fund/rendering-colonial.jpg", alt: "Rendering of a white colonial-style multifamily house with black shutters" },
+  { src: "/images/fund/rendering-aerial.jpg", alt: "Aerial rendering of three homes around a landscaped courtyard" },
+  { src: "/images/fund/rendering-adu.jpg", alt: "Rendering of a small white accessory dwelling unit" },
+  { src: "/images/fund/rendering-duplex.jpg", alt: "Rendering of a modern farmhouse-style duplex with two garages" },
+];
 
 const mechanisms = [
   {
@@ -36,8 +56,8 @@ export default function FundPage() {
     <>
       {/* Hero collage */}
       <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
-        <div className="grid gap-2 overflow-hidden rounded-3xl md:grid-cols-3 md:grid-rows-2">
-          <div className="flex flex-col justify-end bg-brand p-8 sm:p-12 md:col-span-2">
+        <div className="grid grid-cols-2 gap-2 overflow-hidden rounded-3xl md:grid-cols-3">
+          <div className="col-span-2 flex flex-col justify-end bg-brand p-8 sm:p-12">
             <p className="text-lg font-bold tracking-wider text-sun uppercase sm:text-xl">
               Powered by the North Fork Housing Alliance
             </p>
@@ -47,28 +67,26 @@ export default function FundPage() {
               <span className="block text-sky">Fund</span>
             </h1>
           </div>
-          <div className="relative aspect-[4/3] md:aspect-auto">
-            <Image src="/images/people/shopkeeper.jpg" alt="A restaurant worker holding a tablet" fill priority sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-          </div>
-          <div className="relative aspect-[4/3]">
-            <Image src="/images/people/teacher.jpg" alt="A teacher with a student" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-          </div>
-          <div className="relative aspect-[4/3]">
-            <Image src="/images/people/firefighter.jpg" alt="A firefighter from behind" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-          </div>
-          <div className="relative aspect-[4/3]">
-            <Image src="/images/people/parent-child.jpg" alt="A father lifting his child" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-          </div>
+          {heroPhotos.map((p, i) => (
+            <div key={p.src} className="relative aspect-square">
+              <Image src={p.src} alt={p.alt} fill priority={i === 0} sizes="(min-width: 1280px) 410px, (min-width: 768px) 33vw, 100vw" className="object-cover" />
+            </div>
+          ))}
         </div>
       </section>
 
       {/* What it is */}
       <section id="what-it-is" className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8">
-        <SectionHeading eyebrow="What it is" title="A dedicated fund for the missing middle" />
+        <div>
+          <SectionHeading eyebrow="What it is" title="A dedicated fund for the missing middle" />
+          <ButtonLink href="/donate" variant="sun" arrow={false} className="mt-8">
+            Donate
+          </ButtonLink>
+        </div>
         <div className="space-y-5 text-lg leading-relaxed text-ink-soft">
           <p>
-            The <strong className="text-ink">Workforce Housing Fund</strong> (the
-            Fund) is established as a dedicated fund of the North Fork Housing
+            The <strong className="text-ink">Workforce Housing Fund</strong> is
+            established as a dedicated fund of the North Fork Housing
             Alliance for the preservation and development of affordable housing
             units serving support personnel and other essential members of the
             local workforce.
@@ -126,7 +144,7 @@ export default function FundPage() {
         </SectionHeading>
       </section>
 
-      <PeopleStrip />
+      <PeopleStrip photos={fundStrip} />
 
       {/* How it works */}
       <section id="how-it-works" className="bg-sand">
@@ -155,7 +173,15 @@ export default function FundPage() {
         </div>
       </section>
 
-      {/* Outcomes + renderings */}
+      <section className="grid grid-cols-3 gap-1.5">
+        {workPhotos.map((p) => (
+          <div key={p.src} className="relative aspect-square">
+            <Image src={p.src} alt={p.alt} fill sizes="33vw" className="object-cover" />
+          </div>
+        ))}
+      </section>
+
+      {/* Outcomes */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
           <SectionHeading eyebrow="Intended outcomes" title="More homes. Stronger roots.">
@@ -167,20 +193,15 @@ export default function FundPage() {
             housing to middle-income families and individuals who are being
             priced out of the area.
           </SectionHeading>
-          <figure>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image src="/images/places/cottages-aerial.jpg" alt="Aerial rendering of cottage homes around a landscaped green" fill sizes="(min-width: 1024px) 30vw, 50vw" className="object-cover" />
-              </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image src="/images/places/cottages-street.jpg" alt="Rendering of a tree-lined street of cottage homes at sunset" fill sizes="(min-width: 1024px) 30vw, 50vw" className="object-cover" />
-              </div>
-            </div>
-            <figcaption className="mt-3 text-sm text-ink-soft">
-              Examples of Community Housing solutions. Renderings courtesy True
-              North Realty Associates.
-            </figcaption>
-          </figure>
+          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/fund/rendering-picket-gate.jpg"
+              alt="Rendering of a garden path through a white picket gate into a neighborhood of cottage homes"
+              fill
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -226,6 +247,20 @@ export default function FundPage() {
               <ButtonLink href="/work-with-us" variant="outline">Partner with us</ButtonLink>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Community housing solutions */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeading title="Community Housing solutions">
+          Renderings courtesy True North Realty Associates.
+        </SectionHeading>
+        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          {renderings.map((r) => (
+            <div key={r.src} className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+              <Image src={r.src} alt={r.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+            </div>
+          ))}
         </div>
       </section>
     </>

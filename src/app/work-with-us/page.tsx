@@ -86,9 +86,9 @@ export default function WorkWithUsPage() {
 
       <section className="grid grid-cols-3 gap-1.5">
         {[
-          { src: "/images/places/neighborhood.jpg", alt: "A family walking to a craftsman home" },
           { src: "/images/places/planning.jpg", alt: "A planner reviewing floor plans on a screen" },
           { src: "/images/places/renovation.jpg", alt: "A home interior under renovation" },
+          { src: "/images/places/neighborhood.jpg", alt: "A family walking to a craftsman home" },
         ].map((img) => (
           <div key={img.src} className="relative aspect-square sm:aspect-[4/3]">
             <Image src={img.src} alt={img.alt} fill sizes="33vw" className="object-cover" />

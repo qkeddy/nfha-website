@@ -22,7 +22,13 @@ function subscribeReducedMotion(cb: () => void) {
 }
 
 /** Rotating hero (5 slides max, per the brand presentation). */
-export function HeroCarousel({ slides }: { slides: Slide[] }) {
+export function HeroCarousel({
+  slides,
+  className = "h-full min-h-[440px] sm:min-h-[540px]",
+}: {
+  slides: Slide[];
+  className?: string;
+}) {
   const items = slides.slice(0, 5);
   const [index, setIndex] = useState(0);
   // null = the visitor hasn't chosen; fall back to their reduced-motion setting.
@@ -48,7 +54,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
 
   return (
     <div
-      className="relative isolate h-full min-h-[440px] overflow-hidden rounded-3xl bg-brand-night sm:min-h-[540px]"
+      className={`relative isolate overflow-hidden rounded-3xl bg-brand-night ${className}`}
       aria-roledescription="carousel"
       aria-label="Housing funds"
     >
@@ -102,7 +108,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                 key={slide.src}
                 type="button"
                 onClick={() => setIndex(i)}
-                aria-label={`Show ${slide.name} Housing Fund`}
+                aria-label={`Show slide ${i + 1} of ${items.length}`}
                 aria-current={i === index}
                 className={`h-2 rounded-full transition-all ${
                   i === index ? "w-8 bg-sun" : "w-2 bg-white/50 hover:bg-white"
