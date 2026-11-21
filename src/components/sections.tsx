@@ -1,29 +1,39 @@
 import Image from "next/image";
 import { partners } from "@/lib/site";
 
-export const peopleStrip = [
-  { src: "/images/people/police-officer.jpg", alt: "A smiling police officer" },
-  { src: "/images/people/teacher.jpg", alt: "A teacher helping a student" },
-  { src: "/images/people/firefighter.jpg", alt: "A firefighter in a red helmet" },
-  {
-    src: "/images/people/parent-child.jpg",
-    alt: "A father lifting his toddler in a grocery aisle",
-  },
-  {
-    src: "/images/people/paramedic.jpg",
-    alt: "A paramedic caring for a patient",
-  },
-  {
-    src: "/images/people/shopkeeper.jpg",
-    alt: "A restaurant worker holding a tablet",
-  },
+type Photo = { src: string; alt: string };
+
+/** Homepage strip (Strip 1 in the 11-19-26 assets). */
+export const homeStrip: Photo[] = [
+  { src: "/images/people/strip/librarian-child.jpg", alt: "A librarian helping a child find a book" },
+  { src: "/images/people/strip/firefighter-helmet.jpg", alt: "A firefighter in a red helmet, seen from behind" },
+  { src: "/images/people/strip/farmer-leeks.jpg", alt: "A young farmer holding freshly picked leeks" },
+  { src: "/images/people/strip/barista.jpg", alt: "A barista pouring latte art" },
+  { src: "/images/people/strip/librarian.jpg", alt: "A smiling librarian holding books" },
+  { src: "/images/people/strip/plumber.jpg", alt: "A plumber repairing pipes under a sink" },
+];
+
+/** Workforce Housing Fund strip (Strip 2 in the 11-19-26 assets). */
+export const fundStrip: Photo[] = [
+  { src: "/images/people/strip/grocery-clerk.jpg", alt: "A smiling grocery clerk in an apron" },
+  { src: "/images/people/strip/firefighter.jpg", alt: "A firefighter in turnout gear in front of flames" },
+  { src: "/images/people/strip/market-vendor.jpg", alt: "A farm stand vendor holding a tomato" },
+  { src: "/images/people/strip/nurse.jpg", alt: "A nurse helping an older patient with a cane" },
+  { src: "/images/people/strip/chef.jpg", alt: "A chef cooking over a flaming pan" },
+  { src: "/images/people/strip/police-officer.jpg", alt: "A police officer working at a desk" },
 ];
 
 /** The row of community portraits used across the brand presentation. */
-export function PeopleStrip({ className = "" }: { className?: string }) {
+export function PeopleStrip({
+  photos = homeStrip,
+  className = "",
+}: {
+  photos?: Photo[];
+  className?: string;
+}) {
   return (
     <div className={`grid grid-cols-3 gap-1.5 sm:grid-cols-6 ${className}`}>
-      {peopleStrip.map((p) => (
+      {photos.map((p) => (
         <div key={p.src} className="relative aspect-square overflow-hidden">
           <Image
             src={p.src}
@@ -40,7 +50,7 @@ export function PeopleStrip({ className = "" }: { className?: string }) {
 
 export function PartnerLogos() {
   return (
-    <ul className="grid grid-cols-2 items-center gap-6 sm:grid-cols-4">
+    <ul className="grid grid-cols-2 items-center gap-4 sm:grid-cols-3 lg:grid-cols-6">
       {partners.map((p) => (
         <li
           key={p.name}

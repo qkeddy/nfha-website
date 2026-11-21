@@ -12,8 +12,10 @@ export function Footer() {
             <LogoType tone="gray" className="h-14 w-auto" />
           </Link>
           <p className="mt-5 max-w-sm text-ink-soft">
-            Since 1988, a steady and trusted presence on the North Fork. We are
-            Building Stronger Communities.
+            Since 1988, a steady and trusted presence{" "}
+            <strong className="text-ink">
+              Building a Stronger North Fork Community.
+            </strong>
           </p>
           <ul className="mt-6 flex gap-2">
             {site.social.map((s) => (
